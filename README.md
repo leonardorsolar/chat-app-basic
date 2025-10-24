@@ -123,6 +123,57 @@ poetry run uvicorn main:app --reload --port 3002
 -   `POST /api/chat` - Enviar mensagem (com validação Pydantic)
 -   `GET /health` - Health check
 -   `GET /docs` - Documentação interativa (Swagger)
+-   `GET /redoc` - Documentação alternativa (ReDoc)
+
+## 📚 Como Usar o Swagger (Backend Python)
+
+O FastAPI gera automaticamente uma documentação interativa da API usando Swagger UI.
+
+### Acessando o Swagger
+
+1. **Inicie o backend Python:**
+
+    ```bash
+    cd backend_python
+    poetry run uvicorn main:app --reload --port 3002
+    ```
+
+2. **Acesse a documentação Swagger:**
+
+    Abra no navegador: `http://localhost:3002/docs`
+
+### Funcionalidades do Swagger UI
+
+-   **📖 Visualizar Endpoints** - Lista todos os endpoints disponíveis organizados por tags
+-   **🧪 Testar API** - Execute requisições diretamente pela interface
+-   **📝 Ver Schemas** - Visualize os modelos de dados (Pydantic schemas)
+-   **📋 Exemplos** - Veja exemplos de request/response para cada endpoint
+
+### Como Testar um Endpoint
+
+1. Clique no endpoint que deseja testar (ex: `POST /api/chat`)
+2. Clique no botão **"Try it out"**
+3. Preencha o corpo da requisição:
+    ```json
+    {
+        "message": "Olá, como você está?"
+    }
+    ```
+4. Clique em **"Execute"**
+5. Veja a resposta abaixo com o código de status e o corpo da resposta
+
+### Documentação Alternativa - ReDoc
+
+Para uma visualização mais limpa e focada em documentação:
+
+Acesse: `http://localhost:3002/redoc`
+
+### Benefícios
+
+-   ✅ Teste a API sem precisar de ferramentas externas (Postman, Insomnia)
+-   ✅ Documentação sempre atualizada automaticamente
+-   ✅ Validação em tempo real dos dados de entrada
+-   ✅ Visualização clara dos tipos de dados esperados e retornados
 
 ## 💡 Funcionalidades
 
